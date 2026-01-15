@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,9 +9,327 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<link rel="stylesheet" href="style.css">
 
 </head>
+
+<style>
+  :root{
+--bg:#020617;--card:#0f172a;--text:#fff;--muted:#9aa4b2;--accent:#00f0ff;
+}
+.light{
+--bg:#f5f7fb;--card:#ffffff;--text:#020617;--muted:#555;--accent:#0066ff;
+}
+
+*{box-sizing:border-box;font-family:Poppins}
+body{margin:0;background:var(--bg);color:var(--text);transition:.3s}
+
+header{
+position:sticky;top:0;z-index:999;
+display:flex;align-items:center;justify-content:space-between;
+padding:15px 7%;background:rgba(0,0,0,.6);backdrop-filter:blur(10px)
+}
+
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.3rem}
+.logo img{height:40px}
+
+nav a{margin:0 12px;color:var(--text);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--accent)}
+
+.toggle{cursor:pointer;font-size:1.3rem}
+
+.hero{
+padding:90px 7%;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center
+}
+
+.hero h1{font-size:3rem}
+.hero span{color:var(--accent)}
+.hero p{color:var(--muted)}
+.btn{display:inline-block;margin-top:20px;padding:14px 30px;border-radius:30px;
+background:linear-gradient(135deg,var(--accent),#0066ff);color:#000;font-weight:600;text-decoration:none}
+
+section{padding:80px 7%}
+.title{text-align:center;margin-bottom:50px}
+.title h2{font-size:2.4rem}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 70px;
+  background: #020617;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  padding: 60px 40px;
+  text-align: center;
+  background: linear-gradient(135deg,#00f0ff22,#0066ff22);
+}
+
+.slide h2 {
+  color: var(--accent);
+  font-size: 2rem;
+}
+
+.slide p {
+  color: var(--muted);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 8px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.arrow.left { left: 15px; }
+.arrow.right { right: 15px; }
+
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background: #777;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .arrow { display: none; }
+  .dots { display: block; }
+  .slide { padding: 40px 20px; }
+  .slide h2 { font-size: 1.5rem; }
+}
+
+#features {
+  background: linear-gradient(180deg, #020617, #020617);
+  position: relative;
+}
+
+#features .title h2 {
+  color: #ffffff;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.feature {
+  background: #0f172a;
+  padding: 28px 22px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px #000;
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, #00f0ff33, transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.feature:hover::before {
+  opacity: 1;
+}
+
+.feature:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 35px #00f0ff55;
+}
+
+.feature h4 {
+  color: #00f0ff;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.feature p {
+  color: #9aa4b2;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .feature {
+    padding: 22px 18px;
+  }
+}
+
+
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.card{
+background:var(--card);padding:25px;border-radius:20px;
+box-shadow:0 0 25px #000;transition:.4s
+}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 30px var(--accent)}
+.card h3{color:var(--accent)}
+.old{text-decoration:line-through;color:#888}
+
+form{
+max-width:500px;margin:auto;background:var(--card);
+padding:30px;border-radius:20px
+}
+form input,select{
+width:100%;padding:12px;margin-bottom:15px;border-radius:10px;border:none
+}
+form button{width:100%;padding:14px;border:none;border-radius:30px;
+background:linear-gradient(135deg,var(--accent),#0066ff);font-weight:700}
+
+.faq{max-width:800px;margin:auto}
+.faq-item{background:var(--card);margin-bottom:10px;border-radius:12px}
+.faq-item button{
+width:100%;background:none;border:none;color:var(--text);padding:16px;text-align:left;font-size:1rem
+}
+.faq-item div{display:none;padding:0 16px 16px;color:var(--muted)}
+
+footer{
+background:#000;padding:50px 7%;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px
+}
+footer a{color:var(--muted);text-decoration:none}
+.social i{font-size:1.4rem;margin-right:10px}
+
+.whatsapp{
+position:fixed;bottom:20px;right:20px;background:#25d366;color:#000;
+padding:14px 20px;border-radius:30px;text-decoration:none;font-weight:700
+}
+
+@media(max-width:900px){
+.hero{grid-template-columns:1fr;text-align:center}
+}
+
+
+@media (max-width: 1024px) {
+  header {
+    padding: 12px 5%;
+  }
+  .hero {
+    padding: 70px 5%;
+  }
+  section {
+    padding: 70px 5%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    border-top: 1px solid #ffffff22;
+  }
+
+  nav a {
+    margin: 5px 0;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero img {
+    max-width: 85%;
+    margin: auto;
+  }
+
+  .courses {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  form {
+    width: 100%;
+    padding: 22px;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .social {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 0.9rem;
+  }
+
+  .faq-item button {
+    font-size: 0.9rem;
+  }
+
+  .whatsapp {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+}
+</style>
 
 <body>
 
@@ -67,23 +385,30 @@
 
 <div class="card">
 <h3>Frontend Web Development</h3>
-<p>3 Months | 5–7 PM</p>
+<p>3 Months | Mon-Wed-Fri | 5:30–7:30 PM</p>
 <p><span class="old">10,000</span> <b>4,999 PKR</b></p>
 <p>HTML, CSS, JS, Bootstrap, Git, GitHub, Hosting</p>
 </div>
 
 <div class="card">
 <h3>HTML & Web Foundations</h3>
-<p>1 Month | 5–7 PM</p>
+<p>1 Month | Tue-Thu-Sat | 5:30–7:30 PM</p>
 <p><span class="old">5,000</span> <b>3,499 PKR</b></p>
 <p>HTML, CSS basics, GitHub, command line</p>
 </div>
 
 <div class="card">
+  <h3>Master In MS Office</h3>
+  <p>2 Month | Mon-Wed-Fri | 3–5 PM</p>
+  <p><span class="old">3,000</span> <b>1,999 PKR</b></p>
+  <p>HTML, CSS basics, GitHub, command line</p>
+  </div>
+
+<div class="card">
 <h3>Smart Computer Foundations</h3>
-<p>1 Month | 3:30–5 PM</p>
+<p>1 Month | Tue-Thu-Sat | 3–5 PM</p>
 <p><span class="old">3,000</span> <b>1,999 PKR</b></p>
-<p>Computer basics, MS Word, Excel, PowerPoint</p>
+<p>Computer basics,Basic MS Word, Excel, PowerPoint</p>
 </div>
 
 </div>
@@ -149,5 +474,592 @@
 <a class="whatsapp" href="https://wa.me/923148068523" target="_blank">WhatsApp</a>
 
 </body>
-<script src="index.js"></script>
+<script>
+  document.querySelectorAll(".faq-item button").forEach(b=>{
+b.onclick=()=>{let d=b.nextElementSibling;d.style.display=d.style.display=="block"?"none":"block";}
+})
+
+function themeToggle(){
+document.body.classList.toggle("light")
+}
+
+{
+let index = 0;
+const slides = document.querySelector(".slides");
+const slideCount = document.querySelectorAll(".slide").length;
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(i) {
+  index = (i + slideCount) % slideCount;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(d => d.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+function nextSlide() { showSlide(index + 1); }
+function prevSlide() { showSlide(index - 1); }
+function goSlide(i) { showSlide(i); }
+
+setInterval(nextSlide, 3000);
+}
+
+function sendWhatsApp(){
+let n=name.value,e=email.value,no=number.value,c=course.value
+let text=`Assalam-o-Alaikum, I want to enroll.%0A%0AName: ${n}%0AEmail: ${e}%0AWhatsApp: ${no}%0ACourse: ${c}`
+window.open(`https://wa.me/923148068523?text=${text}`,"_blank")
+}
+
+</script>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Muno Tech | Learn Future Skills</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{
+  --bg:#020617; --card:#0f172a; --text:#fff; --muted:#9aa4b2; --accent:#00f0ff;
+}
+.light{
+  --bg:#f5f7fb; --card:#ffffff; --text:#020617; --muted:#555; --accent:#0066ff;
+}
+
+*{box-sizing:border-box;font-family:Poppins}
+body{margin:0;background:var(--bg);color:var(--text);transition:.3s}
+
+header{
+  position:sticky;top:0;z-index:999;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:15px 7%;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);
+}
+body.light header{
+  background:rgba(255,255,255,.8);
+}
+
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.3rem}
+.logo img{height:40px}
+
+nav a{margin:0 12px;color:var(--text);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--accent)}
+
+.toggle{cursor:pointer;font-size:1.3rem}
+
+.hero{
+  padding:90px 7%;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center
+}
+.hero h1{font-size:3rem}
+.hero span{color:var(--accent)}
+.hero p{color:var(--muted)}
+.btn{display:inline-block;margin-top:20px;padding:14px 30px;border-radius:30px;
+background:linear-gradient(135deg,var(--accent),#0066ff);color:#000;font-weight:600;text-decoration:none}
+
+section{padding:80px 7%}
+.title{text-align:center;margin-bottom:50px}
+.title h2{font-size:2.4rem;color:var(--text)}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 70px;
+  background: var(--card);
+}
+.slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+.slide {
+  min-width: 100%;
+  padding: 60px 40px;
+  text-align: center;
+  background: linear-gradient(135deg,var(--accent)22,#0066ff22);
+}
+.slide h2 { color: var(--accent); font-size: 2rem; }
+.slide p { color: var(--muted); }
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 8px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+.arrow:hover { background: var(--accent); color: #000; }
+.arrow.left { left: 15px; }
+.arrow.right { right: 15px; }
+
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+.dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background: #777;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.dot.active { background: var(--accent); transform: scale(1.3); }
+
+#features { background: linear-gradient(180deg, var(--bg), var(--bg)); position: relative; }
+#features .title h2 { color: var(--text); }
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+.feature {
+  background: var(--card);
+  padding: 28px 22px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px #00000022;
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, var(--accent)33, transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+.feature:hover::before { opacity: 1; }
+.feature:hover { transform: translateY(-10px) scale(1.02); box-shadow:0 0 35px var(--accent)55; }
+.feature h4 { color: var(--accent); margin-bottom: 10px; font-size:1.2rem; }
+.feature p { color: var(--muted); font-size:0.95rem; line-height:1.5; }
+
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.card{
+  background:var(--card);padding:25px;border-radius:20px;
+  box-shadow:0 0 25px #00000022;transition:.4s
+}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 30px var(--accent)}
+.card h3{color:var(--accent)}
+.old{text-decoration:line-through;color:#888}
+
+form{
+  max-width:500px;margin:auto;background:var(--card);
+  padding:30px;border-radius:20px
+}
+form input,select{
+  width:100%;padding:12px;margin-bottom:15px;border-radius:10px;border:none
+}
+form button{
+  width:100%;padding:14px;border:none;border-radius:30px;
+  background:linear-gradient(135deg,var(--accent),#0066ff);font-weight:700
+}
+
+.faq{max-width:800px;margin:auto}
+.faq-item{background:var(--card);margin-bottom:10px;border-radius:12px}
+.faq-item button{
+  width:100%;background:none;border:none;color:var(--text);padding:16px;text-align:left;font-size:1rem
+}
+.faq-item div{display:none;padding:0 16px 16px;color:var(--muted)}
+
+footer{
+  background: var(--card);
+  padding:50px 7%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px
+}
+footer a{color:var(--muted);text-decoration:none}
+.social i{font-size:1.4rem;margin-right:10px}
+
+.whatsapp{
+  position:fixed;bottom:20px;right:20px;background:#25d366;color:#000;
+  padding:14px 20px;border-radius:30px;text-decoration:none;font-weight:700
+}
+
+/* --- Posters Section --- */
+/* ===== Posters Carousel ===== */
+
+#posters {
+  padding: 80px 7%;
+  position: relative;
+  overflow: hidden;
+}
+
+.poster-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.poster-track {
+  display: flex;
+  align-items: center;
+  transition: transform 0.8s ease;
+}
+
+.poster-item {
+  min-width: 50%;
+  padding: 3px;
+  transition: 0.6s;
+  filter: blur(3px);
+  opacity: 0.4;
+  transform: scale(0.8);
+}
+
+.poster-item img {
+  width: 100%;
+  height: 450px;        /* 🔥 bigger poster */
+  object-fit: contain; /* 🔥 full image visible */
+  border-radius: 0px;  /* 🔥 no curvy edges */
+  box-shadow: 0 10px 30px #00000033;
+  background: #00000011; /* optional soft background */
+}
+
+
+/* center poster */
+.poster-item.active {
+  filter: blur(0);
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* arrows */
+.poster-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.2rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.poster-arrow:hover {
+  color: var(--accent);
+}
+
+.poster-arrow.left { left: -10px; }
+.poster-arrow.right { right: -10px; }
+
+/* mobile */
+@media(max-width:768px){
+  .poster-item { min-width: 70%; }
+  .poster-item img { height: 180px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo"><img src="logo.png"> Muno Tech</div>
+  <nav>
+    <a href="#courses">Courses</a>
+    <a href="#enroll">Enroll</a>
+    <a href="#faq">FAQs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="toggle" onclick="themeToggle()"><i class="fa-solid fa-circle-half-stroke"></i></div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Build Your Future with <span>Muno Tech</span></h1>
+    <p>Creative tech education, real projects & professional mentorship.</p>
+    <a class="btn" href="#enroll">Enroll Now</a>
+  </div>
+  <img src="hero-tech.png">
+</section>
+
+<!-- Main Slider -->
+<section>
+  <div class="slider">
+    <button class="arrow left" onclick="prevSlide()">❮</button>
+    <button class="arrow right" onclick="nextSlide()">❯</button>
+    <div class="slides">
+      <div class="slide"><h2>🚀 New Batch Starting</h2><p>Frontend Web Development – 15 Feb 2026</p></div>
+      <div class="slide"><h2>🔥 Limited Seats</h2><p>Professional Live Training + Projects</p></div>
+      <div class="slide"><h2>🎯 Build Your Career</h2><p>Join Muno Tech First Batch</p></div>
+    </div>
+    <div class="dots">
+      <span class="dot active" onclick="goSlide(0)"></span>
+      <span class="dot" onclick="goSlide(1)"></span>
+      <span class="dot" onclick="goSlide(2)"></span>
+    </div>
+  </div>
+  <!-- Future sliders placeholders -->
+  <!-- <div class="slider" style="display:none;"></div>
+  <div class="slider" style="display:none;"></div>
+  <div class="slider" style="display:none;"></div> -->
+</section>
+
+<section id="courses">
+  <div class="title"><h2>Our Courses</h2></div>
+  <div class="courses">
+    <div class="card"><h3>Frontend Web Development</h3><p>3 Months | Mon-Wed-Fri | 5:30–7:30 PM</p><p><span class="old">10,000</span> <b>4,999 PKR</b></p><p>HTML, CSS, JS, Bootstrap, Git, GitHub, Hosting</p></div>
+    <div class="card"><h3>HTML & Web Foundations</h3><p>1 Month | Tue-Thu-Sat | 5:30–7:30 PM</p><p><span class="old">5,000</span> <b>3,499 PKR</b></p><p>HTML, CSS basics, GitHub, command line</p></div>
+    <div class="card"><h3>Master In MS Office</h3><p>2 Month | Mon-Wed-Fri | 3–5 PM</p><p><span class="old">3,000</span> <b>1,999 PKR</b></p><p>HTML, CSS basics, GitHub, command line</p></div>
+    <div class="card"><h3>Smart Computer Foundations</h3><p>1 Month | Tue-Thu-Sat | 3–5 PM</p><p><span class="old">3,000</span> <b>1,999 PKR</b></p><p>Computer basics,Basic MS Word, Excel, PowerPoint</p></div>
+  </div>
+</section>
+
+<!-- Posters Section -->
+<section id="posters">
+  <div class="title"><h2>Course Posters</h2></div>
+
+  <div class="poster-wrapper">
+
+    <button class="poster-arrow left" onclick="movePoster(-1)">❮</button>
+    <button class="poster-arrow right" onclick="movePoster(1)">❯</button>
+
+    <div class="poster-track" id="posterTrack">
+
+      <!-- Replace src with your real posters -->
+      <div class="poster-item"><img src="Frontend Web Development.png"></div>
+      <div class="poster-item"><img src="Frontend Web Development.png"></div>
+      <div class="poster-item"><img src="Frontend Web Development.png"></div>
+      <div class="poster-item"><img src="Frontend Web Development.png"></div>
+      <div class="poster-item"><img src="Frontend Web Development.png"></div>
+      <div class="poster-item"><img src="Frontend Web Development.png"></div>
+      <!-- add up to 8 easily -->
+
+    </div>
+  </div>
+</section>
+
+
+<section id="features">
+  <div class="title"><h2>Why Choose Muno Tech?</h2></div>
+  <div class="features">
+    <div class="feature"><h4>Live Classes</h4><p>Interactive sessions with recordings.</p></div>
+    <div class="feature"><h4>Real Projects</h4><p>Customize websites as per criteria.</p></div>
+    <div class="feature"><h4>Mentorship</h4><p>Support whenever you are stuck.</p></div>
+    <div class="feature"><h4>Career Guidance</h4><p>Job & freelancing roadmap.</p></div>
+  </div>
+</section>
+
+<section id="enroll">
+  <div class="title"><h2>Enroll Now</h2></div>
+  <form onsubmit="sendWhatsApp(); return false;">
+    <input id="name" placeholder="Your Name" required>
+    <input id="email" placeholder="Email" required>
+    <input id="number" placeholder="WhatsApp Number" required>
+    <select id="course">
+      <option>Frontend Web Development</option>
+      <option>HTML & Web Foundations</option>
+      <option>Smart Computer Foundations</option>
+    </select>
+    <button>Enroll on WhatsApp</button>
+  </form>
+</section>
+
+<section id="faq">
+  <div class="title"><h2>FAQs</h2></div>
+  <div class="faq">
+    <div class="faq-item"><button>Is this beginner friendly?</button><div>Yes, from zero to professional level.</div></div>
+    <div class="faq-item"><button>Will I get recordings?</button><div>Yes, every class will be recorded.</div></div>
+    <div class="faq-item"><button>Can I earn after this?</button><div>Yes, job and freelancing focused training.</div></div>
+    <div class="faq-item"><button>Is support available?</button><div>Yes, live Q&A + chat support.</div></div>
+    <div class="faq-item"><button>Do I need my own laptop?</button><div>Yes, for practice and growth.</div></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div>
+    <h3>Muno Tech</h3>
+    <p>munotech1@gmail.com</p>
+    <p>+92 314 8068523</p>
+  </div>
+  <div class="social">
+    <h4>Social</h4>
+    <a href="https://www.instagram.com/munotech_/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/muno.tech" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.linkedin.com/in/muno-tech-942329399/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.tiktok.com/@munotech?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://github.com/muno-tech" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/923148068523" target="_blank">WhatsApp</a>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll(".faq-item button").forEach(b=>{
+    b.onclick=()=>{let d=b.nextElementSibling;d.style.display=d.style.display=="block"?"none":"block";}
+  });
+
+  // Theme toggle
+  function themeToggle(){document.body.classList.toggle("light")}
+
+  // Main slider
+  let index=0;
+  const slides=document.querySelector(".slides");
+  const slideCount=document.querySelectorAll(".slide").length;
+  const dots=document.querySelectorAll(".dot");
+  function showSlide(i){
+    index=(i+slideCount)%slideCount;
+    slides.style.transform=`translateX(-${index*100}%)`;
+    dots.forEach(d=>d.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+  function nextSlide(){showSlide(index+1);}
+  function prevSlide(){showSlide(index-1);}
+  function goSlide(i){showSlide(i);}
+  setInterval(nextSlide,5000);
+
+  // WhatsApp form
+  function sendWhatsApp(){
+    let n=name.value,e=email.value,no=number.value,c=course.value;
+    let text=`Assalam-o-Alaikum, I want to enroll.%0A%0AName: ${n}%0AEmail: ${e}%0AWhatsApp: ${no}%0ACourse: ${c}`;
+    window.open(`https://wa.me/923148068523?text=${text}`,"_blank")
+  }
+
+  // Poster slider
+  // ===== Posters Carousel =====
+
+const posterTrack = document.getElementById("posterTrack");
+const posters = document.querySelectorAll(".poster-item");
+let posterIndex = 0;
+
+function updatePoster() {
+  const width = posters[0].offsetWidth;
+  posterTrack.style.transform = `translateX(${(-posterIndex * width)}px)`;
+
+  posters.forEach(p => p.classList.remove("active"));
+
+  let center = posterIndex + 1;
+  if (posters[center]) posters[center].classList.add("active");
+}
+
+function movePoster(step) {
+  posterIndex += step;
+
+  if (posterIndex < 0) posterIndex = posters.length - 3;
+  if (posterIndex > posters.length - 3) posterIndex = 0;
+
+  updatePoster();
+}
+
+updatePoster();
+setInterval(() => movePoster(1), 6000);
+
+</script>
+
+</body>
 </html>
+
