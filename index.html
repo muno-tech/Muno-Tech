@@ -474,6 +474,8 @@
 <meta charset="UTF-8">
 <title>Muno Tech | Learn Future Skills</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -573,6 +575,123 @@ padding:14px 20px;border-radius:30px;text-decoration:none;font-weight:700
 @media(max-width:900px){
 .hero{grid-template-columns:1fr;text-align:center}
 }
+/* ============================= */
+/* 📱 MOBILE & TABLET RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 1024px) {
+  header {
+    padding: 12px 5%;
+  }
+  .hero {
+    padding: 70px 5%;
+  }
+  section {
+    padding: 70px 5%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Header */
+  header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    border-top: 1px solid #ffffff22;
+  }
+
+  nav a {
+    margin: 5px 0;
+    font-size: 0.9rem;
+  }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero img {
+    max-width: 85%;
+    margin: auto;
+  }
+
+  /* Banner */
+  .slide {
+    padding: 35px 20px;
+    text-align: center;
+  }
+
+  .slide h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Titles */
+  .title h2 {
+    font-size: 1.9rem;
+  }
+
+  /* Cards */
+  .courses {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  /* Form */
+  form {
+    width: 100%;
+    padding: 22px;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+  }
+
+  .social {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 0.9rem;
+  }
+
+  .slide h2 {
+    font-size: 1.3rem;
+  }
+
+  .faq-item button {
+    font-size: 0.9rem;
+  }
+
+  .whatsapp {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+}
+
 </style>
 </head>
 
