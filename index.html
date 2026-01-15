@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Muno Tech | Learn Future Skills</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -240,7 +239,7 @@
 
   <div class="courses">
 
-    <!-- Course 1 -->
+    
     <div class="card">
       <h3>Frontend Web Development</h3>
       <p>⏱ 3 Months | Mon-Wed-Fri | 5pm–7pm</p>
@@ -257,7 +256,7 @@
       <a class="cta" href="https://wa.me/923148068523">Enroll Now →</a>
     </div>
 
-    <!-- Course 2 -->
+    
     <div class="card">
       <h3>HTML & Web Foundations</h3>
       <p>⏱ 1 Month | Alternate Days | 5pm–7pm</p>
@@ -274,7 +273,7 @@
       <a class="cta" href="https://wa.me/923148068523">Enroll Now →</a>
     </div>
 
-    <!-- Course 3 -->
+
     <div class="card">
       <h3>Smart Computer Foundations</h3>
       <p>⏱ 1 Month | 3:30pm–5:00pm</p>
@@ -300,7 +299,7 @@
   </div>
   <div class="features">
     <div class="feature"><h4>Live Classes</h4><p>Interactive sessions with recordings.</p></div>
-    <div class="feature"><h4>Real Projects</h4><p>Build professional portfolio.</p></div>
+    <div class="feature"><h4>Real Projects</h4><p>Customize Websites as per criteria</p></div>
     <div class="feature"><h4>Mentorship</h4><p>Support whenever you are stuck.</p></div>
     <div class="feature"><h4>Career Guidance</h4><p>Job & freelancing roadmap.</p></div>
   </div>
@@ -358,6 +357,357 @@
       div.style.display = div.style.display === "block" ? "none" : "block";
     })
   })
+</script>
+
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Muno Tech | Learn Future Skills</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+:root{
+--bg:#020617;--card:#0f172a;--text:#fff;--muted:#9aa4b2;--accent:#00f0ff;
+}
+.light{
+--bg:#f5f7fb;--card:#ffffff;--text:#020617;--muted:#555;--accent:#0066ff;
+}
+
+*{box-sizing:border-box;font-family:Poppins}
+body{margin:0;background:var(--bg);color:var(--text);transition:.3s}
+
+header{
+position:sticky;top:0;z-index:999;
+display:flex;align-items:center;justify-content:space-between;
+padding:15px 7%;background:rgba(0,0,0,.6);backdrop-filter:blur(10px)
+}
+
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.3rem}
+.logo img{height:40px}
+
+nav a{margin:0 12px;color:var(--text);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--accent)}
+
+.toggle{cursor:pointer;font-size:1.3rem}
+
+.hero{
+padding:90px 7%;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center
+}
+
+.hero h1{font-size:3rem}
+.hero span{color:var(--accent)}
+.hero p{color:var(--muted)}
+.btn{display:inline-block;margin-top:20px;padding:14px 30px;border-radius:30px;
+background:linear-gradient(135deg,var(--accent),#0066ff);color:#000;font-weight:600;text-decoration:none}
+
+section{padding:80px 7%}
+.title{text-align:center;margin-bottom:50px}
+.title h2{font-size:2.4rem}
+
+/* 🔥 Banner Slider */
+.slider{overflow:hidden;border-radius:20px;margin-bottom:70px}
+.slides{display:flex;width:300%;animation:slide 12s infinite}
+.slide{width:100%;padding:50px;background:linear-gradient(135deg,#00f0ff22,#0066ff22)}
+.slide h2{color:var(--accent)}
+@keyframes slide{
+0%,25%{transform:translateX(0)}
+33%,58%{transform:translateX(-100%)}
+66%,91%{transform:translateX(-200%)}
+100%{transform:translateX(0)}
+}
+
+/* Courses */
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.card{
+background:var(--card);padding:25px;border-radius:20px;
+box-shadow:0 0 25px #000;transition:.4s
+}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 30px var(--accent)}
+.card h3{color:var(--accent)}
+.old{text-decoration:line-through;color:#888}
+
+/* Enroll Form */
+form{
+max-width:500px;margin:auto;background:var(--card);
+padding:30px;border-radius:20px
+}
+form input,select{
+width:100%;padding:12px;margin-bottom:15px;border-radius:10px;border:none
+}
+form button{width:100%;padding:14px;border:none;border-radius:30px;
+background:linear-gradient(135deg,var(--accent),#0066ff);font-weight:700}
+
+/* FAQ */
+.faq{max-width:800px;margin:auto}
+.faq-item{background:var(--card);margin-bottom:10px;border-radius:12px}
+.faq-item button{
+width:100%;background:none;border:none;color:var(--text);padding:16px;text-align:left;font-size:1rem
+}
+.faq-item div{display:none;padding:0 16px 16px;color:var(--muted)}
+
+footer{
+background:#000;padding:50px 7%;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px
+}
+footer a{color:var(--muted);text-decoration:none}
+.social i{font-size:1.4rem;margin-right:10px}
+
+.whatsapp{
+position:fixed;bottom:20px;right:20px;background:#25d366;color:#000;
+padding:14px 20px;border-radius:30px;text-decoration:none;font-weight:700
+}
+
+@media(max-width:900px){
+.hero{grid-template-columns:1fr;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<img src="logo.png"> Muno Tech
+</div>
+<nav>
+<a href="#courses">Courses</a>
+<a href="#enroll">Enroll</a>
+<a href="#faq">FAQs</a>
+<a href="#contact">Contact</a>
+</nav>
+<div class="toggle" onclick="themeToggle()">
+<i class="fa-solid fa-circle-half-stroke"></i>
+</div>
+</header>
+
+<section class="hero">
+<div>
+<h1>Build Your Future with <span>Muno Tech</span></h1>
+<p>Creative tech education, real projects & professional mentorship.</p>
+<a class="btn" href="#enroll">Enroll Now</a>
+</div>
+<img src="hero-tech.png">
+</section>
+
+<!-- 🔥 Animated Banners -->
+<section>
+<div class="slider">
+<div class="slides">
+<div class="slide"><h2>🚀 New Batch Starting</h2><p>Frontend Web Development – 15 Feb 2026</p></div>
+<div class="slide"><h2>🔥 Limited Seats</h2><p>Professional Live Training + Projects</p></div>
+<div class="slide"><h2>🎯 Build Your Career</h2><p>Join Muno Tech First Batch</p></div>
+</div>
+</div>
+</section>
+
+<section id="courses">
+<div class="title"><h2>Our Courses</h2></div>
+<div class="courses">
+
+<div class="card">
+<h3>Frontend Web Development</h3>
+<p>3 Months | 5–7 PM</p>
+<p><span class="old">10,000</span> <b>4,999 PKR</b></p>
+<p>HTML, CSS, JS, Bootstrap, Git, GitHub, Hosting</p>
+</div>
+
+<div class="card">
+<h3>HTML & Web Foundations</h3>
+<p>1 Month | 5–7 PM</p>
+<p><span class="old">5,000</span> <b>3,499 PKR</b></p>
+<p>HTML, CSS basics, GitHub, command line</p>
+</div>
+
+<div class="card">
+<h3>Smart Computer Foundations</h3>
+<p>1 Month | 3:30–5 PM</p>
+<p><span class="old">3,000</span> <b>1,999 PKR</b></p>
+<p>Computer basics, MS Word, Excel, PowerPoint</p>
+</div>
+
+</div>
+</section>
+
+<section id="enroll">
+<div class="title"><h2>Enroll Now</h2></div>
+
+<form onsubmit="sendWhatsApp(); return false;">
+<input id="name" placeholder="Your Name" required>
+<input id="email" placeholder="Email" required>
+<input id="number" placeholder="WhatsApp Number" required>
+
+<select id="course">
+<option>Frontend Web Development</option>
+<option>HTML & Web Foundations</option>
+<option>Smart Computer Foundations</option>
+</select>
+
+<button>Enroll on WhatsApp</button>
+</form>
+</section>
+
+<section id="faq">
+<div class="title"><h2>FAQs</h2></div>
+<div class="faq">
+
+<div class="faq-item"><button>Is this beginner friendly?</button><div>Yes, from zero to professional level.</div></div>
+<div class="faq-item"><button>Will I get recordings?</button><div>Yes, every class will be recorded.</div></div>
+<div class="faq-item"><button>Can I earn after this?</button><div>Yes, job and freelancing focused training.</div></div>
+<div class="faq-item"><button>Is support available?</button><div>Yes, live Q&A + chat support.</div></div>
+<div class="faq-item"><button>Do I need my own laptop?</button><div>Yes, for practice and growth.</div></div>
+
+</div>
+</section>
+
+<footer id="contact">
+<div>
+<h3>Muno Tech</h3>
+<p>munotech1@gmail.com</p>
+<p>+92 314 8068523</p>
+</div>
+
+<div class="social">
+<h4>Social</h4>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-tiktok"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/923148068523">WhatsApp</a>
+
+<script>
+/* FAQ */
+document.querySelectorAll(".faq-item button").forEach(b=>{
+b.onclick=()=>{let d=b.nextElementSibling;d.style.display=d.style.display=="block"?"none":"block";}
+})
+
+/* Theme */
+function themeToggle(){
+document.body.classList.toggle("light")
+}
+
+/* WhatsApp Form */
+function sendWhatsApp(){
+let n=name.value,e=email.value,no=number.value,c=course.value
+let text=`Assalam-o-Alaikum, I want to enroll.%0A%0AName: ${n}%0AEmail: ${e}%0AWhatsApp: ${no}%0ACourse: ${c}`
+window.open(`https://wa.me/923148068523?text=${text}`,"_blank")
+}
 </script>
 
 </body>
