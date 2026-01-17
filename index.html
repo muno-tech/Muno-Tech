@@ -3,10 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <title>Muno Tech | Learn Future Skills</title>
+<!-- Add these lines after <title> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+  
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="images/logo.webp">
+  <link rel="preload" as="image" href="images/hero-tech.webp">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Learn Future Tech Skills at Muno Tech - Web Development, MS Office, Computer Basics. Live Classes, Real Projects, Career Guidance in Pakistan.">
+<meta name="keywords" content="web development course, HTML CSS tutorial, MS Office training, computer basics, online classes Pakistan, coding course Karachi, tech education">
+<meta name="author" content="Muno Tech">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph for Facebook/WhatsApp -->
+<meta property="og:title" content="Muno Tech | Learn Future Skills">
+<meta property="og:description" content="Professional tech education with live classes, real projects, and career guidance.">
+<meta property="og:image" content="https://yourdomain.com/images/logo.webp">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:type" content="website">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muno Tech | Learn Future Skills">
+<meta name="twitter:description" content="Join the best tech courses in Pakistan">
+<meta name="twitter:image" content="https://yourdomain.com/images/hero-tech.webp">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta name="theme-color" content="#00f0ff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Favicon - Use RELATIVE paths -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#020617">
+
+<!-- Simple favicon that ALWAYS works -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#00f0ff">
+
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#00f0ff">
+
+
 
 <style>
 :root{
@@ -612,12 +667,119 @@ footer a:hover{
   .slides-container{height:250px}
   .slide h2{font-size:1.5rem}
 }
+
+/* Trust Section */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.trust-item {
+  background: var(--card);
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s;
+}
+
+.trust-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.trust-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.trust-item h4 {
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.trust-item p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+/* Loading spinner */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+/* Testimonials CSS */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.testimonial-card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 15px;
+  border-left: 4px solid var(--accent);
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.testimonial-author strong {
+  color: var(--accent);
+  display: block;
+}
+
+.testimonial-author span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 </style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0H9KWKT0J7');
+</script>
 </head>
+<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2SWHGJD1G7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2SWHGJD1G7');
+</script>
 
 <body>
 <header>
-  <div class="logo"><img src="logo.png" alt="Muno Tech Logo"> Muno Tech</div>
+  <div class="logo"><img src="./Images/logo.png" alt="Muno Tech Logo"> Muno Tech</div>
   
   <div class="menu-toggle" onclick="toggleMenu()">
     <i class="fas fa-bars"></i>
@@ -643,7 +805,7 @@ footer a:hover{
     <p>Creative tech education, real projects & professional mentorship. Learn the skills that matter in today's digital world.</p>
     <a class="btn" href="#enroll">Enroll Now</a>
   </div>
-  <img src="hero-tech.png" alt="Technology Illustration">
+  <img src="./Images/hero-tech.png" alt="Technology Illustration">
 </section>
 
 <!-- Main Slider -->
@@ -762,26 +924,71 @@ footer a:hover{
 
 <section id="enroll">
   <div class="title"><h2>Enroll Now</h2></div>
-  <form id="enrollForm">
-    <input type="text" id="name" placeholder="Your Full Name" required>
-    <input type="email" id="email" placeholder="Email Address" required>
-    <input type="tel" id="number" placeholder="WhatsApp Number" required>
-    
-    <select id="course" required>
-      <option value="">Select Course</option>
-      <option>Frontend Web Development</option>
-      <option>HTML & Web Foundations</option>
-      <option>Master In MS Office</option>
-      <option>Smart Computer Foundations</option>
-    </select>
-    
-    <button type="submit">Enroll Now</button>
-    <p style="text-align:center; margin-top:15px; color:var(--muted); font-size:0.9rem">
-      You'll be redirected to WhatsApp after submission
-    </p>
+  <form id="enrollForm" action="https://formsubmit.co/munotech1@gmail.com" method="POST">
+  <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+  <input type="email" id="email" name="email" placeholder="Email Address" required>
+  <input type="tel" id="number" name="phone" placeholder="WhatsApp Number" required>
+  
+  <select id="course" name="course" required>
+  <option value="">Select Course</option>
+  <option>Frontend Web Development</option>
+  <option>HTML & Web Foundations</option>
+  <option>Master In MS Office</option>
+  <option>Smart Computer Foundations</option>
+  </select>
+  
+  <!-- FormSubmit hidden fields -->
+  <input type="hidden" name="_subject" value="New Enrollment - Muno Tech">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_autoresponse" value="Thank you for enrolling in Muno Tech! We'll contact you shortly on WhatsApp.">
+  
+  <button type="submit">Enroll Now</button>
+  <p style="text-align:center; margin-top:15px; color:var(--muted); font-size:0.9rem">
+  You'll be redirected to WhatsApp after submission
+  </p>
   </form>
+  </section>
+
+
+  <!-- Trust Section -->
+<section id="trust">
+  <div class="title"><h2>Why Students Trust Muno Tech</h2></div>
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-icon">✅</div>
+      <h4>100% Live Classes</h4>
+      <p>Interactive sessions with experienced instructors</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🎓</div>
+      <h4>Certificate of Completion</h4>
+      <p>Industry-recognized certificate for your portfolio</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🔄</div>
+      <h4>Money Back Guarantee</h4>
+      <p>7-day refund policy if not satisfied*</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">💼</div>
+      <h4>Job Assistance</h4>
+      <p>Resume building and interview preparation</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">📱</div>
+      <h4>24/7 Support</h4>
+      <p>WhatsApp support group for all students</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">💻</div>
+      <h4>Real Projects</h4>
+      <p>Build actual websites for your portfolio</p>
+    </div>
+  </div>
 </section>
 
+<!-- Then your existing FAQ section -->
 <section id="faq">
   <div class="title"><h2>Frequently Asked Questions</h2></div>
   <div class="faq">
@@ -831,6 +1038,42 @@ footer a:hover{
         <i class="fas fa-chevron-down"></i>
       </button>
       <div>Classes are held 3 times a week in evening slots (5:30-7:30 PM). We also offer weekend batches for working professionals.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="title"><h2>What Our Students Say</h2></div>
+  <div class="testimonials-grid">
+    <div class testimonial-card>
+      <div class="testimonial-text">
+        "Muno Tech changed my career! From zero to frontend developer in 3 months."
+      </div>
+      <div class="testimonial-author">
+        <strong>Ali Raza</strong>
+        <span>Frontend Developer</span>
+      </div>
+    </div>
+    
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        "Best MS Office course! Now I can handle all office work efficiently."
+      </div>
+      <div class="testimonial-author">
+        <strong>Sara Ahmed</strong>
+        <span>Office Administrator</span>
+      </div>
+    </div>
+    
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        "The support is amazing. They helped me even after course completion."
+      </div>
+      <div class="testimonial-author">
+        <strong>Bilal Khan</strong>
+        <span>Freelancer</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1026,63 +1269,81 @@ function toggleFAQ(button) {
 }
 
 // Enrollment Form with Email + WhatsApp
-document.getElementById('enrollForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const number = document.getElementById('number').value;
-  const course = document.getElementById('course').value;
-  
-  // Send email using FormSubmit.co
-  try {
-    const response = await fetch('https://formsubmit.co/ajax/munotech1@gmail.com', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        phone: number,
-        course: course,
-        source: 'Muno Tech Website'
-      })
-    });
+/* ========== FAST ENROLLMENT FORM ========== */
+document.getElementById("enrollForm").addEventListener("submit", function(e) {
+    e.preventDefault();
     
-    // Open WhatsApp (this happens regardless of email success)
-    const whatsappText = `Assalam-o-Alaikum, I want to enroll in Muno Tech.%0A%0AName: ${name}%0AEmail: ${email}%0AWhatsApp: ${number}%0ACourse: ${course}`;
-    window.open(`https://wa.me/923148068523?text=${encodeURIComponent(whatsappText)}`, '_blank');
+    // Get form data
+    const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("number").value,
+        course: document.getElementById("course").value,
+        timestamp: new Date().toLocaleString()
+    };
     
-    // Reset form
-    this.reset();
+    // 1. FIRST: Open WhatsApp IMMEDIATELY (no waiting)
+    const whatsappText = `Assalam-o-Alaikum, I want to enroll in Muno Tech.%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0AWhatsApp: ${formData.phone}%0ACourse: ${formData.course}`;
+    window.open(`https://wa.me/923148068523?text=${encodeURIComponent(whatsappText)}`, "_blank");
     
-    // Show success message
-    alert('Thank you! You will be redirected to WhatsApp for further communication.');
+    // 2. THEN: Send email in BACKGROUND (user doesn't wait)
+    sendEmailBackground(formData);
     
-  } catch (error) {
-    // If email fails, still open WhatsApp
-    const whatsappText = `Assalam-o-Alaikum, I want to enroll in Muno Tech.%0A%0AName: ${name}%0AEmail: ${email}%0AWhatsApp: ${number}%0ACourse: ${course}`;
-    window.open(`https://wa.me/923148068523?text=${encodeURIComponent(whatsappText)}`, '_blank');
-    this.reset();
-  }
+    // 3. Show success message
+    const btn = this.querySelector("button");
+    const originalText = btn.textContent;
+    btn.textContent = "✓ Enrollment Sent!";
+    btn.style.background = "linear-gradient(135deg, #4CAF50, #45a049)";
+    
+    // 4. Reset form
+    setTimeout(() => {
+        this.reset();
+        btn.textContent = originalText;
+        btn.style.background = "linear-gradient(135deg,var(--accent),#0066ff)";
+    }, 2000);
 });
 
-// Initialize on load
-document.addEventListener('DOMContentLoaded', function() {
-  updatePostersPerView();
-  updatePosterSlider();
-  
-  // Close menu when clicking outside
-  document.addEventListener('click', function(e) {
-    const nav = document.getElementById('mainNav');
-    const menuToggle = document.querySelector('.menu-toggle');
-    if (!nav.contains(e.target) && !menuToggle.contains(e.target) && nav.classList.contains('active')) {
-      nav.classList.remove('active');
-    }
-  });
-  
+// Email function that runs in background
+function sendEmailBackground(data) {
+    // Use fetch with NO waiting for response
+    fetch("https://formsubmit.co/ajax/munotech1@gmail.com", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            _subject: "📚 New Enrollment - Muno Tech",
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            course: data.course,
+            time: data.timestamp,
+            _template: "table",
+            _autoresponse: `Thank you ${data.name} for enrolling in ${data.course}! We'll contact you on WhatsApp shortly.`,
+            _captcha: "false"
+        })
+    })
+    .then(response => response.json())
+    .then(data => console.log("Email sent successfully"))
+    .catch(error => console.log("Email failed (but WhatsApp worked)"));
+    
+    // ALSO send to a backup service
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            access_key: "76a283bd-4dd6-4363-a8b7-891acf198ac5", // Get free from web3forms.com
+            subject: "Muno Tech Enrollment",
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            course: data.course
+        })
+    });
+}  
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -1099,7 +1360,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-});
+;
 
 // Update on window resize
 window.addEventListener('resize', updatePosterSlider);

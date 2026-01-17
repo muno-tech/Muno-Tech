@@ -1,0 +1,22 @@
+{
+    "name": "Muno Tech",
+    "short_name": "MunoTech",
+    "description": "Learn Future Tech Skills with Live Classes",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#020617",
+    "theme_color": "#00f0ff",
+    "orientation": "portrait",
+    "icons": [
+      {
+        "src": "images/icon-192.webp",
+        "sizes": "192x192",
+        "type": "image/webp"
+      },
+      {
+        "src": "images/icon-512.webp",
+        "sizes": "512x512",
+        "type": "image/webp"
+      }
+    ]
+  }
