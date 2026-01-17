@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Muno Tech | Learn Future Skills</title>
-<!-- Add these lines after <title> -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
-  
-  <!-- Preload critical images -->
-  <link rel="preload" as="image" href="images/logo.webp">
-  <link rel="preload" as="image" href="images/hero-tech.webp">
+<!-- Google Fonts with preload -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+
+<!-- Preload critical images -->
+<link rel="preload" as="image" href="images/logo.png">
+<link rel="preload" as="image" href="images/hero-tech.png">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO Meta Tags -->
@@ -22,7 +23,7 @@
 <!-- Open Graph for Facebook/WhatsApp -->
 <meta property="og:title" content="Muno Tech | Learn Future Skills">
 <meta property="og:description" content="Professional tech education with live classes, real projects, and career guidance.">
-<meta property="og:image" content="https://yourdomain.com/images/logo.webp">
+<meta property="og:image" content="https://yourdomain.com/images/logo.png">
 <meta property="og:url" content="https://yourdomain.com">
 <meta property="og:type" content="website">
 
@@ -30,38 +31,21 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Muno Tech | Learn Future Skills">
 <meta name="twitter:description" content="Join the best tech courses in Pakistan">
-<meta name="twitter:image" content="https://yourdomain.com/images/hero-tech.webp">
+<meta name="twitter:image" content="https://yourdomain.com/images/hero-tech.png">
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<link rel="manifest" href="manifest.json">
+
+<!-- Favicon (Simple and working) -->
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <meta name="theme-color" content="#00f0ff">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<!-- Favicon - Use RELATIVE paths -->
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#020617">
-
-<!-- Simple favicon that ALWAYS works -->
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#00f0ff">
-
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#00f0ff">
-
-
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
 
 <style>
 :root{
@@ -87,7 +71,17 @@ body.light header{
 }
 
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.4rem}
-.logo img{height:40px}
+.logo img{
+  height:40px;
+  background:rgba(255,255,255,0.1); /* Makes logo visible in dark theme */
+  padding:5px;
+  border-radius:8px;
+}
+body.light .logo img{
+  background:rgba(0, 0, 0, 0.05); /* Lighter background for light theme */
+  padding:5px;
+  border-radius:8px;
+}
 
 /* Navigation */
 nav{display:flex;gap:20px}
@@ -419,8 +413,8 @@ form input, form select{
   margin-bottom:20px;
   border-radius:10px;
   border:none;
-  background:rgba(80, 63, 63, 0.05);
-  color: rgb(134, 130, 130);
+  background:rgba(255,255,255,0.05);
+  color: rgb(97, 95, 95);
   font-size:1rem;
   border:1px solid rgba(255,255,255,0.1);
 }
@@ -707,22 +701,7 @@ footer a:hover{
   font-size: 0.95rem;
   line-height: 1.5;
 }
-/* Loading spinner */
-.loading {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 3px solid rgba(255,255,255,.3);
-  border-radius: 50%;
-  border-top-color: #fff;
-  animation: spin 1s ease-in-out infinite;
-  vertical-align: middle;
-  margin-right: 8px;
-}
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
 /* Testimonials CSS */
 .testimonials-grid {
   display: grid;
@@ -757,29 +736,20 @@ footer a:hover{
 }
 
 </style>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_MEASUREMENT_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-0H9KWKT0J7');
-</script>
-</head>
-<!-- Google tag (gtag.js) -->
-<!-- Google tag (gtag.js) -->
+
+<!-- Google Analytics - Single, Correct Version -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SWHGJD1G7"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-2SWHGJD1G7');
 </script>
+</head>
 
 <body>
 <header>
-  <div class="logo"><img src="./Images/logo.png" alt="Muno Tech Logo"> Muno Tech</div>
+  <div class="logo"><img src="./images/logo.png" alt="Muno Tech Logo"> Muno Tech</div>
   
   <div class="menu-toggle" onclick="toggleMenu()">
     <i class="fas fa-bars"></i>
@@ -805,7 +775,7 @@ footer a:hover{
     <p>Creative tech education, real projects & professional mentorship. Learn the skills that matter in today's digital world.</p>
     <a class="btn" href="#enroll">Enroll Now</a>
   </div>
-  <img src="./Images/hero-tech.png" alt="Technology Illustration">
+  <img src="./images/hero-tech.png" alt="Technology Illustration">
 </section>
 
 <!-- Main Slider -->
@@ -905,6 +875,7 @@ footer a:hover{
   </div>
 </section>
 
+<!-- POSTERS SECTION -->
 <section id="posters">
   <div class="title"><h2>Course Posters</h2></div>
   
@@ -913,8 +884,44 @@ footer a:hover{
     <button class="poster-arrow left" onclick="movePoster(-1)">❮</button>
     <button class="poster-arrow right" onclick="movePoster(1)">❯</button>
     
+    <!-- ========== ADD YOUR POSTERS HERE ========== -->
     <div class="poster-track" id="posterTrack">
-      <!-- Poster items will be added by JavaScript -->
+      <!-- Poster 1 -->
+      <div class="poster-item active">
+        <img src="./Images/Posters/Frontend Web Development.png" alt="Web Development Course">
+      </div>
+      
+      <!-- Poster 2 -->
+      <div class="poster-item">
+        <img src="./Images/Posters/Frontend Web Development.png" alt="MS Office Training">
+      </div>
+      
+      <!-- Poster 3 -->
+      <div class="poster-item">
+        <img src="./Images/Posters/Frontend Web Development.png" alt="HTML CSS Course">
+      </div>
+      
+      <!-- Poster 4 -->
+      <div class="poster-item">
+        <img src="./Images/Posters/Frontend Web Development.png" alt="Computer Basics">
+      </div>
+      
+      <!-- Poster 5 -->
+      <div class="poster-item">
+        <img src="./Images/Posters/Frontend Web Development.png" alt="Career Guidance">
+      </div>
+      
+      <!-- Poster 6 -->
+      <div class="poster-item">
+        <img src="./Images/Posters/Frontend Web Development.png" alt="Live Classes">
+      </div>
+      
+      <!-- ========== ADD MORE POSTERS BELOW ========== -->
+      <!-- 
+      <div class="poster-item">
+        <img src="images/poster/your-new-poster.png" alt="Your New Course">
+      </div>
+      -->
     </div>
     
     <!-- Dots for Mobile -->
@@ -924,34 +931,33 @@ footer a:hover{
 
 <section id="enroll">
   <div class="title"><h2>Enroll Now</h2></div>
-  <form id="enrollForm" action="https://formsubmit.co/munotech1@gmail.com" method="POST">
-  <input type="text" id="name" name="name" placeholder="Your Full Name" required>
-  <input type="email" id="email" name="email" placeholder="Email Address" required>
-  <input type="tel" id="number" name="phone" placeholder="WhatsApp Number" required>
-  
-  <select id="course" name="course" required>
-  <option value="">Select Course</option>
-  <option>Frontend Web Development</option>
-  <option>HTML & Web Foundations</option>
-  <option>Master In MS Office</option>
-  <option>Smart Computer Foundations</option>
-  </select>
-  
-  <!-- FormSubmit hidden fields -->
-  <input type="hidden" name="_subject" value="New Enrollment - Muno Tech">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_autoresponse" value="Thank you for enrolling in Muno Tech! We'll contact you shortly on WhatsApp.">
-  
-  <button type="submit">Enroll Now</button>
-  <p style="text-align:center; margin-top:15px; color:var(--muted); font-size:0.9rem">
-  You'll be redirected to WhatsApp after submission
-  </p>
+  <form id="enrollForm" action="https://formsubmit.co/munotech00@gmail.com" method="POST">
+    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+    <input type="email" id="email" name="email" placeholder="Email Address" required>
+    <input type="tel" id="number" name="phone" placeholder="WhatsApp Number" required>
+    
+    <select id="course" name="course" required>
+      <option value="">Select Course</option>
+      <option>Frontend Web Development</option>
+      <option>HTML & Web Foundations</option>
+      <option>Master In MS Office</option>
+      <option>Smart Computer Foundations</option>
+    </select>
+    
+    <!-- FormSubmit hidden fields -->
+    <input type="hidden" name="_subject" value="New Enrollment - Muno Tech">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_autoresponse" value="Thank you for enrolling in Muno Tech! We'll contact you shortly on WhatsApp.">
+    
+    <button type="submit">Enroll Now</button>
+    <p style="text-align:center; margin-top:15px; color:var(--muted); font-size:0.9rem">
+      You'll be redirected to WhatsApp after submission
+    </p>
   </form>
-  </section>
+</section>
 
-
-  <!-- Trust Section -->
+<!-- Trust Section -->
 <section id="trust">
   <div class="title"><h2>Why Students Trust Muno Tech</h2></div>
   <div class="trust-grid">
@@ -988,7 +994,7 @@ footer a:hover{
   </div>
 </section>
 
-<!-- Then your existing FAQ section -->
+<!-- FAQ section -->
 <section id="faq">
   <div class="title"><h2>Frequently Asked Questions</h2></div>
   <div class="faq">
@@ -1046,7 +1052,7 @@ footer a:hover{
 <section id="testimonials">
   <div class="title"><h2>What Our Students Say</h2></div>
   <div class="testimonials-grid">
-    <div class testimonial-card>
+    <div class="testimonial-card">
       <div class="testimonial-text">
         "Muno Tech changed my career! From zero to frontend developer in 3 months."
       </div>
@@ -1081,7 +1087,7 @@ footer a:hover{
 <footer id="contact">
   <div>
     <h3>Muno Tech</h3>
-    <p><i class="fas fa-envelope"></i> munotech1@gmail.com</p>
+    <p><i class="fas fa-envelope"></i> munotech00@gmail.com</p>
     <p><i class="fas fa-phone"></i> +92 314 8068523</p>
     <p><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</p>
   </div>
@@ -1171,19 +1177,10 @@ function goToSlide(index) {
 setInterval(nextSlide, 3000);
 
 // Poster Slider Functionality
-const posterImages = [
-  'Frontend Web Development.png',
-  'Frontend Web Development.png',
-  'Frontend Web Development.png',
-  'Frontend Web Development.png',
-  'Frontend Web Development.png',
-  'Frontend Web Development.png'
-];
-
-const posterTrack = document.getElementById('posterTrack');
-const posterDotsContainer = document.getElementById('posterDots');
+// ========== POSTER SLIDER - HTML BASED ==========
 let currentPoster = 0;
 let postersPerView = 3;
+let posterInterval;
 
 // Function to update posters per view based on screen size
 function updatePostersPerView() {
@@ -1196,28 +1193,27 @@ function updatePostersPerView() {
   }
 }
 
-// Create poster items
-posterImages.forEach((imgSrc, index) => {
-  const posterItem = document.createElement('div');
-  posterItem.className = `poster-item ${index === 1 ? 'active' : ''}`;
-  posterItem.innerHTML = `<img src="${imgSrc}" alt="Course Poster ${index + 1}">`;
-  posterTrack.appendChild(posterItem);
-});
-
-// Create dots for posters
-posterImages.forEach((_, index) => {
-  const dot = document.createElement('div');
-  dot.className = `poster-dot ${index === 1 ? 'active' : ''}`;
-  dot.onclick = () => goToPoster(index);
-  posterDotsContainer.appendChild(dot);
-});
+// Initialize poster dots from HTML content
+function initPosterDots() {
+  const posterItems = document.querySelectorAll('.poster-item');
+  const posterDotsContainer = document.getElementById('posterDots');
+  posterDotsContainer.innerHTML = ''; // Clear existing dots
+  
+  posterItems.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.className = `poster-dot ${index === 0 ? 'active' : ''}`;
+    dot.onclick = () => goToPoster(index);
+    posterDotsContainer.appendChild(dot);
+  });
+}
 
 function updatePosterSlider() {
   updatePostersPerView();
   const posterItems = document.querySelectorAll('.poster-item');
+  const posterTrack = document.getElementById('posterTrack');
   const itemWidth = 100 / postersPerView;
   
-  // Update active class
+  // Update active class and width
   posterItems.forEach((item, index) => {
     item.classList.remove('active');
     item.style.width = `${itemWidth}%`;
@@ -1242,7 +1238,9 @@ function updatePosterSlider() {
 }
 
 function movePoster(direction) {
-  const totalPosters = posterImages.length;
+  const posterItems = document.querySelectorAll('.poster-item');
+  const totalPosters = posterItems.length;
+  
   currentPoster += direction;
   
   if (currentPoster < 0) {
@@ -1255,12 +1253,53 @@ function movePoster(direction) {
 }
 
 function goToPoster(index) {
-  currentPoster = Math.min(index, posterImages.length - postersPerView);
+  const posterItems = document.querySelectorAll('.poster-item');
+  currentPoster = Math.min(index, posterItems.length - postersPerView);
   updatePosterSlider();
 }
 
-// Auto slide posters every 6 seconds
-setInterval(() => movePoster(1), 4000);
+// Start auto sliding
+function startPosterAutoSlide() {
+  clearInterval(posterInterval);
+  posterInterval = setInterval(() => movePoster(1), 4000);
+}
+
+// Initialize everything when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize poster slider
+  initPosterDots();
+  updatePosterSlider();
+  startPosterAutoSlide();
+  
+  // Pause auto-slide on hover
+  const posterWrapper = document.querySelector('.poster-wrapper');
+  if (posterWrapper) {
+    posterWrapper.addEventListener('mouseenter', () => clearInterval(posterInterval));
+    posterWrapper.addEventListener('mouseleave', startPosterAutoSlide);
+    
+    // Handle touch events for mobile
+    let startX = 0;
+    posterWrapper.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      clearInterval(posterInterval);
+    });
+    
+    posterWrapper.addEventListener('touchend', (e) => {
+      const endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) {
+        movePoster(1); // Swipe left
+      } else if (endX - startX > 50) {
+        movePoster(-1); // Swipe right
+      }
+      startPosterAutoSlide();
+    });
+  }
+});
+
+// Update on window resize
+window.addEventListener('resize', function() {
+  updatePosterSlider();
+});
 
 // FAQ Toggle
 function toggleFAQ(button) {
@@ -1269,7 +1308,6 @@ function toggleFAQ(button) {
 }
 
 // Enrollment Form with Email + WhatsApp
-/* ========== FAST ENROLLMENT FORM ========== */
 document.getElementById("enrollForm").addEventListener("submit", function(e) {
     e.preventDefault();
     
@@ -1284,7 +1322,7 @@ document.getElementById("enrollForm").addEventListener("submit", function(e) {
     
     // 1. FIRST: Open WhatsApp IMMEDIATELY (no waiting)
     const whatsappText = `Assalam-o-Alaikum, I want to enroll in Muno Tech.%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0AWhatsApp: ${formData.phone}%0ACourse: ${formData.course}`;
-    window.open(`https://wa.me/923148068523?text=${encodeURIComponent(whatsappText)}`, "_blank");
+    window.open(`https://wa.me/923148068523?text=${whatsappText}`, "_blank");
     
     // 2. THEN: Send email in BACKGROUND (user doesn't wait)
     sendEmailBackground(formData);
@@ -1306,7 +1344,7 @@ document.getElementById("enrollForm").addEventListener("submit", function(e) {
 // Email function that runs in background
 function sendEmailBackground(data) {
     // Use fetch with NO waiting for response
-    fetch("https://formsubmit.co/ajax/munotech1@gmail.com", {
+    fetch("https://formsubmit.co/ajax/munotech00@gmail.com", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -1328,42 +1366,47 @@ function sendEmailBackground(data) {
     .then(data => console.log("Email sent successfully"))
     .catch(error => console.log("Email failed (but WhatsApp worked)"));
     
-    // ALSO send to a backup service
+    // ALSO send to Web3Forms as backup
     fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            access_key: "76a283bd-4dd6-4363-a8b7-891acf198ac5", // Get free from web3forms.com
+            access_key: "76a283bd-4dd6-4363-a8b7-891acf198ac5",
             subject: "Muno Tech Enrollment",
             name: data.name,
             email: data.email,
             phone: data.phone,
-            course: data.course
+            course: data.course,
+            from_name: "Muno Tech Website"
         })
-    });
-}  
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    })
+    .catch(err => console.log("Web3Forms backup failed"));
+}
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      }
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
     });
-  });
-;
+});
 
 // Update on window resize
 window.addEventListener('resize', updatePosterSlider);
+
+// Initialize poster slider
+updatePosterSlider();
 </script>
 
 </body>
