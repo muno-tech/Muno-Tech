@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
               course: data.course,
               time: data.timestamp,
               _template: "table",
-              _autoresponse: `Thank you ${data.name} for enrolling in ${data.course}! We'll contact you on WhatsApp shortly.`,
+              _autoresponse: `Thank you ${data.name} ,you are sucessfully enrolled in ${data.course}! We'll contact you on WhatsApp shortly.`,
               _captcha: "false"
           })
       })
@@ -312,4 +312,4 @@ document.addEventListener('DOMContentLoaded', function() {
               });
           }
       });
-  });
+  }); 
